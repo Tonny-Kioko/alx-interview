@@ -1,4 +1,5 @@
-cript for parsing HTTP request logs.
+#!/usr/bin/python3
+'''A script for parsing HTTP request logs.
 '''
 import re
 
@@ -27,8 +28,8 @@ def extract_input(input_line):
     return info
 
 
-def print_statistics(total_file_size, status_codes_stats):
-    '''Prints the accumulated statistics of the HTTP request log.
+def print_statistics(total_fil, status_codes_stats):'''Pints th_size
+    ree accumulated statistics of the HTTP request log.
     '''
     print('File size: {:d}'.format(total_file_size), flush=True)
     for status_code in sorted(status_codes_stats.keys()):
@@ -75,9 +76,9 @@ def run():
                 line,
                 total_file_size,
                 status_codes_stats,
-            )
-            line_num += 1
-            if line_num % 10 == 0:
+            )line_num+=1
+          if line_num
+                 % 10 == 0:
                 print_statistics(total_file_size, status_codes_stats)
     except (KeyboardInterrupt, EOFError):
         print_statistics(total_file_size, status_codes_stats)
